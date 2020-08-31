@@ -1,0 +1,30 @@
+.main{
+    width: 100%;
+}
+.second{
+    width: 50%;
+    border: 2px solid #637a91;
+    height: auto;
+}
+.head{
+background: #637a91;
+padding: 0;
+margin: 0;
+}
+.head h2{
+    color: white;
+}
+.btn-sty{
+    background: #5fcf80;
+    color: white;
+    padding: 0.7rem 0;
+}
+p{
+    color: rgb(119, 119, 119);
+}
+
+@media screen and (max-width:576px) {
+    .second{
+        width: 90%;
+    }
+  }

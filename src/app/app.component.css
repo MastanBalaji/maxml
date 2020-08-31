@@ -1,0 +1,7 @@
+li{
+    margin-left: 1rem;
+}
+li a:hover{
+    transform: scale(1.2);
+    text-shadow: 0rem 0rem 1rem ;
+}

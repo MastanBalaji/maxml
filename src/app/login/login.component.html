@@ -1,0 +1,74 @@
+<div class="d-flex justify-content-center mt-5 main">
+    <div class="second">
+        <div class="head">
+            <h2 class="text-center p-3">Lets Get Started!</h2>
+        </div>
+        <div>
+            <form [formGroup]="signup" class='d-flex justify-content-center p-md-3'>
+                <div class='row w-100'>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <p>First name </p>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput placeholder="First name" formControlName="firstname"
+                                oninput="this.value = this.value.replace(/\s/g, '');">
+                            <mat-error *ngIf="signup.get('firstname').hasError('required')">
+                                <h4>First name is required</h4>
+                            </mat-error>
+                            <mat-error *ngIf="signup.get('firstname').hasError('pattern')">
+                                <h4>Alphabets only</h4>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <p>Last name </p>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput placeholder="Last name" formControlName="lastname"
+                                oninput="this.value = this.value.replace(/\s/g, '');">
+                            <mat-error *ngIf="signup.get('lastname').hasError('required')">
+                                <h4>Last name is required</h4>
+                            </mat-error>
+                            <mat-error *ngIf="signup.get('lastname').hasError('pattern')">
+                                <h4>Alphabets only</h4>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <p>Email</p>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput placeholder="Enter gmail" formControlName="gmail"
+                                oninput="this.value = this.value.replace(/\s/g, '');">
+                            <mat-error *ngIf="signup.get('gmail').hasError('required')">
+                                <h4>Email is required</h4>
+                            </mat-error>
+                            <mat-error *ngIf="signup.get('gmail').hasError('pattern')">
+                                <h4>Enter valid email</h4>
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-lg-6 mt-2">
+                        <p>Password</p>
+                        <mat-form-field appearance="outline" class="w-100">
+                            <input matInput placeholder="Password" formControlName="password"
+                                oninput="this.value = this.value.replace(/\s/g, '');">
+                            <mat-error *ngIf="signup.get('password').hasError('required')">
+                                <h4>password is required</h4>
+                            </mat-error>
+                            <mat-error *ngIf="signup.get('password').hasError('pattern')">
+                                <h4>Alphabets and numbers only</h4>
+                            </mat-error>
+                            <mat-error *ngIf="signup.get('password').hasError('minlength') && !signup.get('password').hasError('pattern')">
+                                <h4>Password atleast 8 character long</h4>
+                                </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 mt-3">
+                            <button class="btn w-100 btn-sty" [disabled]='!signup.valid' (click)='submit()'>Claim Your Free Trail</button>
+                            <p class="mt-3">Your are agreeing to our <a href="#">Terms and Services</a></p>
+                    </div>
+                   
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
